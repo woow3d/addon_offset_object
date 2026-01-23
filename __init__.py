@@ -11,13 +11,30 @@ bl_info = {
     "license": "GPL-3.0",
     "online_access": False
 }
+
 import bpy
 
-# --------------------------------------------------
-# Utils
-# --------------------------------------------------
-def get_objects(context, method='NAME'):
-    if method == 'NAME':
+# ---------- Utils ----------
+def apply_offset(obj, axis, value):
+    """Apply offset to a single object along the specified axis."""
+    if axis == 'X':
+        obj.location.x += value
+    elif axis == 'Y':
+        obj.location.y += value
+    elif axis == 'Z':
+        obj.location.z += value
+
+
+def get_objects(context, method):
+    if method == 'SELECTION':
+        # التحديد الفعلي مع Active object أولاً
+        selected = context.selected_objects
+        if context.active_object in selected:
+            selected.remove(context.active_object)
+            return [context.active_object] + selected
+        return selected
+    else:
+        # By Name
         active = context.active_object
         if not active:
             return []
@@ -26,19 +43,15 @@ def get_objects(context, method='NAME'):
                 if obj.name == base_name or obj.name.startswith(base_name + ".")]
         objs.sort(key=lambda o: o.name)
         return objs
-    elif method == 'SELECTION':
-        # نحتفظ فقط بالمجسمات المحددة
-        return [obj for obj in context.selected_objects if obj.type == 'MESH']
 
 
-
-# --------------------------------------------------
+# -------------------------------
 # Operator
-# --------------------------------------------------
+# -------------------------------
 class OBJECT_OT_offset_object(bpy.types.Operator):
     bl_idname = "object.offset_object"
     bl_label = "Offset Object"
-    bl_description = "Offset objects based on active object name"
+    bl_description = "Offset objects along an axis with mm precision"
     bl_options = {'REGISTER', 'UNDO'}
 
     offset_mm: bpy.props.FloatProperty(
@@ -80,6 +93,7 @@ class OBJECT_OT_offset_object(bpy.types.Operator):
         ],
         default='PLUS'
     )
+
     order_type: bpy.props.EnumProperty(
         name="Offset Method",
         description="Choose how to determine the order of objects",
@@ -90,47 +104,40 @@ class OBJECT_OT_offset_object(bpy.types.Operator):
         default='NAME'
     )
 
+
     def execute(self, context):
-            base_offset = self.offset_mm / 1000.0
-            sign = 1 if self.direction == 'PLUS' else -1
+        base_offset = self.offset_mm / 1000.0
+        sign = 1 if self.direction == 'PLUS' else -1
 
-            # نختار طريقة الترتيب حسب الخيار
-            objects = get_objects(context, method=self.order_type)
+        objects = get_objects(context, method=self.order_type)
 
-            for i, obj in enumerate(objects):
-                index = i + 1 if self.offset_first else i
-                final_offset = sign * base_offset * self.multiplier * index
-                apply_offset(obj, self.axis, final_offset)
+        for i, obj in enumerate(objects):
+            index = i + 1 if self.offset_first else i
+            final_offset = sign * base_offset * self.multiplier * index
+            apply_offset(obj, self.axis, final_offset)
 
-            return {'FINISHED'}
+        return {'FINISHED'}
 
 
-# --------------------------------------------------
+
+# -------------------------------
 # Menu
-# --------------------------------------------------
+# -------------------------------
 def menu_func(self, context):
     if context.active_object:
         self.layout.separator()
-        self.layout.operator(
-            "object.offset_object"
-        )
+        self.layout.operator("object.offset_object", icon='EMPTY_ARROWS')
 
-
-# --------------------------------------------------
+# -------------------------------
 # Register
-# --------------------------------------------------
+# -------------------------------
 def register():
     bpy.utils.register_class(OBJECT_OT_offset_object)
     bpy.types.VIEW3D_MT_transform_object.append(menu_func)
 
-
 def unregister():
     bpy.types.VIEW3D_MT_transform_object.remove(menu_func)
     bpy.utils.unregister_class(OBJECT_OT_offset_object)
-
-
-
-
 
 if __name__ == "__main__":
     register()
