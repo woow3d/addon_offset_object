@@ -59,7 +59,7 @@ A professional Blender add-on to offset objects precisely along a chosen axis, e
 
 ## 🔹 Requirements
 
-- Blender 3.0+ (tested on 5.1)  
+- Blender 4.2+ (tested on 5.1)  
 - Windows / Linux / macOS  
 - No external libraries required
 
@@ -73,7 +73,7 @@ GPL-3.0
 ## 🔹 Contact
 
 - GitHub: [https://github.com/Jackals-work/addon_offset_object](https://github.com/Jackals-work/addon_offset_object)  
-- Blender Community: Simple Code  
+- Blender Community:Jackals  
 
 ---
 
