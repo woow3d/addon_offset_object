@@ -25,3 +25,57 @@ A professional Blender add-on to offset objects precisely along a chosen axis, e
 - Use a multiplier to amplify offset for faster adjustments.
 - All settings appear in **Redo Panel / F9**.
 - Fully integrated in Blender menu:
+
+
+
+> Perfect for CAD, 3D printing, and precise object arrangement workflows.
+
+---
+
+## 🔹 Installation
+
+1. Download the add-on `offset_objects_by_name.py`.  
+2. Open Blender.  
+3. Go to:
+4. Select the file and click **Install**.  
+5. Enable the add-on.
+
+---
+
+## 🔹 Usage
+
+1. Select any object (Active Object).  
+2. Go to:
+3. Adjust the settings in **Redo Panel / F9**:
+   - **Offset (mm):** Distance between objects.
+   - **Axis:** X, Y, Z.
+   - **Direction:** + / -.
+   - **Offset First Object:** Offset the first object or not.
+   - **Multiplier:** Amplify offset amount.
+   - **Offset Method:** By Name / By Selection.
+4. Press **Enter** or click outside the panel to apply the offset.
+
+---
+
+## 🔹 Requirements
+
+- Blender 3.0+ (tested on 5.1)  
+- Windows / Linux / macOS  
+- No external libraries required
+
+---
+
+## 🔹 License
+GPL-3.0
+
+---
+
+## 🔹 Contact
+
+- GitHub: [https://github.com/Jackals-work/addon_offset_object](https://github.com/Jackals-work/addon_offset_object)  
+- Blender Community: Simple Code  
+
+---
+
+### 🌟 Thank you for using "Offset Objects By Name"!  
+Star ⭐, share, and contribute to the Blender community!
