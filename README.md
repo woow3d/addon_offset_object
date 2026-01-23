@@ -15,7 +15,7 @@ A professional Blender add-on to offset objects precisely along a chosen axis, e
 
 ## 🔹 Full Description / What it does
 
-**Offset Objects By Name (Axis + MM)** allows you to:
+**Offset Objects By Name or Select (Axis + MM)** allows you to:
 
 - Offset multiple objects sharing the same base name (Active Object) **or by selection order**.
 - Choose axis: X, Y, Z.
@@ -27,8 +27,14 @@ A professional Blender add-on to offset objects precisely along a chosen axis, e
 - Fully integrated in Blender menu:
 
 
-
 > Perfect for CAD, 3D printing, and precise object arrangement workflows.
+
+---
+## 🎬 Watch the Tutorial
+
+Learn how to use the Offset Objects add-on with this video tutorial:
+
+[![Watch the Offset Object Addon Tutorial]("C:\Users\nader\OneDrive\سطح المكتب\offset object addon Blender.png")](https://www.youtube.com/watch?v=qLnPLWVeleA)
 
 ---
 
@@ -38,13 +44,13 @@ A professional Blender add-on to offset objects precisely along a chosen axis, e
 2. Open Blender.  
 3. Go to:
 4. Select the file and click **Install**.  
-5. Enable the add-on.
+5. Enable the add-on by checking its box.
 
 ---
 
 ## 🔹 Usage
 
-1. Select any object (Active Object).  
+1. Select any object as the **Active Object**.  
 2. Go to:
 3. Adjust the settings in **Redo Panel / F9**:
    - **Offset (mm):** Distance between objects.
@@ -73,9 +79,9 @@ GPL-3.0
 ## 🔹 Contact
 
 - GitHub: [https://github.com/Jackals-work/addon_offset_object](https://github.com/Jackals-work/addon_offset_object)  
-- Blender Community:Jackals  
+- Blender Community: Jackals  
 
 ---
 
-### 🌟 Thank you for using "Offset Objects By Name"!  
+### 🌟 Thank you for using "Offset Objects By Name or Select"!  
 Star ⭐, share, and contribute to the Blender community!
