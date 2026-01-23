@@ -34,7 +34,8 @@ A professional Blender add-on to offset objects precisely along a chosen axis, e
 
 Learn how to use the Offset Objects add-on with this video tutorial:
 
-[!"C:\Users\nader\OneDrive\سطح المكتب\offset object addon Blender.png"]([https://www.youtube.com/watch?v=qLnPLWVeleA](https://youtu.be/qLnPLWVeleA))
+[![Watch the Offset Object Addon Tutorial](https://img.youtube.com/vi/qLnPLWVeleA/maxresdefault.jpg)](https://www.youtube.com/watch?v=qLnPLWVeleA)
+
 
 ---
 
