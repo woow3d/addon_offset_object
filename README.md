@@ -1,6 +1,6 @@
 # Offset Objects By Name or Select (Axis + MM)
 
-**Author:** Abdulrahman Baggash (Simple Code)  
+**Author:** Abdulrahman Baggash (Jackals)  
 **Blender Version:** 4.2.0+ (tested on 5.1)  
 **Version:** 1.0.0  
 **Category:** Object  
